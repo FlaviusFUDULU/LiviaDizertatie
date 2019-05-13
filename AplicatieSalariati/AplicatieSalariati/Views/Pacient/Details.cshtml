@@ -7,57 +7,74 @@
 <h2>Detalii</h2>
 
 <div>
-    <h4>SalariatModel</h4>
     <hr />
-    <dt>
-        @Html.DisplayNameFor(model => model.CNP)
-    </dt>
+    <p>
+        <b>
+            @Html.DisplayNameFor(model => model.CNP)
+        </b>: @Html.DisplayFor(model => model.CNP)
+    </p>
 
-    <dd>
-        @Html.DisplayFor(model => model.CNP)
-    </dd>
+    <p>
+        <b>
+            @Html.DisplayNameFor(model => model.Nume)
+        </b>: @Html.DisplayFor(model => model.Nume)
+    </p>
 
-    <dt>
-        @Html.DisplayNameFor(model => model.Nume)
-    </dt>
+    <p>
+        <b>
+            @Html.DisplayNameFor(model => model.Prenume)
+        </b>: @Html.DisplayFor(model => model.Prenume)
+    </p>
 
-    <dd>
-        @Html.DisplayFor(model => model.Nume)
-    </dd>
+    <p>
+        <b>
+            @Html.DisplayNameFor(model => model.Email)
+        </b>:  @Html.DisplayFor(model => model.Email)
+    </p>
 
-    <dt>
-        @Html.DisplayNameFor(model => model.Prenume)
-    </dt>
+    <p>
+        <b>
+            @Html.DisplayNameFor(model => model.Adresa)
+        </b>: @Html.DisplayFor(model => model.Adresa)
+    </p>
 
-    <dd>
-        @Html.DisplayFor(model => model.Prenume)
-    </dd>
+    <p>
+        <b>
+            @Html.DisplayNameFor(model => model.Numartelefon)
+        </b>: @Html.DisplayFor(model => model.Numartelefon)
+    </p>
+    <p>
+        <b>
+            @Html.DisplayNameFor(model => model.Sex)
+        </b>: @Html.DisplayFor(model => model.Sex)
+    </p>
+    <p>
+        <b>
+            @Html.DisplayNameFor(model => model.DataNasterii)
+        </b>: @Html.DisplayFor(model => model.DataNasterii)
+    </p>
+    <p>
+        <b>
+            @Html.DisplayNameFor(model => model.ActIdentitate)
+        </b>
+        : @Html.DisplayFor(model => model.ActIdentitate)
+    </p>
 
-    <dt>
-        @Html.DisplayNameFor(model => model.Email)
-    </dt>
+    <p>---------------------------------------------------------------------</p>
 
-    <dd>
-        @Html.DisplayFor(model => model.Email)
-    </dd>
 
-    <dt>
-        @Html.DisplayNameFor(model => model.Adresa)
-    </dt>
+    @foreach (var istoric in Model.Istorics)
+    {
+        <p>
+            <b>
+                Diagnostic
+                @*@Html.DisplayFor(model => model.Istorics.)*@
+            </b>
+            : @istoric.Diagnostic
+        </p>
+    }
 
-    <dd>
-        @Html.DisplayFor(model => model.Adresa)
-    </dd>
 
-    <dt>
-        @Html.DisplayNameFor(model => model.Numartelefon)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.Numartelefon)
-    </dd>
-
-    </dl>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.CNP }) |

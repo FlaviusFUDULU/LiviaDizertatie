@@ -35,11 +35,15 @@ namespace AplicatieSalariati.Controllers
         // GET: Salariat/Details/5
         public ActionResult Details(string id)
         {
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Pacient pacient = db.Pacient.Find(id);
+
+            db.Entry(pacient).Collection(p => p.Istorics).Load();
+
             if (pacient == null)
             {
                 return HttpNotFound();
@@ -93,7 +97,7 @@ namespace AplicatieSalariati.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CNP,Nume,Prenume,Email,Adresa,NumarTelefon")] Pacient pacient)
+        public ActionResult Edit([Bind(Include = "CNP,Nume,Prenume,Email,Adresa,NumarTelefon,DataNasterii,Sex,ActIdentitate")] Pacient pacient)
         {
             if (ModelState.IsValid)
             {

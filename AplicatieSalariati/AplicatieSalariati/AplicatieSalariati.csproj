@@ -185,29 +185,30 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904181742285_please.cs" />
-    <Compile Include="Migrations\201904181742285_please.Designer.cs">
-      <DependentUpon>201904181742285_please.cs</DependentUpon>
+    <Compile Include="Migrations\201905131537178_please medic.cs" />
+    <Compile Include="Migrations\201905131537178_please medic.Designer.cs">
+      <DependentUpon>201905131537178_please medic.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904191550458_added pacient.cs" />
-    <Compile Include="Migrations\201904191550458_added pacient.Designer.cs">
-      <DependentUpon>201904191550458_added pacient.cs</DependentUpon>
+    <Compile Include="Migrations\201905131541056_Added display name to data nasterii.cs" />
+    <Compile Include="Migrations\201905131541056_Added display name to data nasterii.Designer.cs">
+      <DependentUpon>201905131541056_Added display name to data nasterii.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904191734130_added medic.cs" />
-    <Compile Include="Migrations\201904191734130_added medic.Designer.cs">
-      <DependentUpon>201904191734130_added medic.cs</DependentUpon>
+    <Compile Include="Migrations\201905131629132_Detalii.cs" />
+    <Compile Include="Migrations\201905131629132_Detalii.Designer.cs">
+      <DependentUpon>201905131629132_Detalii.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904191742561_added medic1.cs" />
-    <Compile Include="Migrations\201904191742561_added medic1.Designer.cs">
-      <DependentUpon>201904191742561_added medic1.cs</DependentUpon>
+    <Compile Include="Migrations\201905131708547_added istoric.cs" />
+    <Compile Include="Migrations\201905131708547_added istoric.Designer.cs">
+      <DependentUpon>201905131708547_added istoric.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904191744022_added medicPlease.cs" />
-    <Compile Include="Migrations\201904191744022_added medicPlease.Designer.cs">
-      <DependentUpon>201904191744022_added medicPlease.cs</DependentUpon>
+    <Compile Include="Migrations\201905131712207_added autoincrement.cs" />
+    <Compile Include="Migrations\201905131712207_added autoincrement.Designer.cs">
+      <DependentUpon>201905131712207_added autoincrement.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Medic.cs" />
+    <Compile Include="Models\Istioric.cs" />
     <Compile Include="Models\Pacient.cs" />
     <Compile Include="Models\DateAngajatModel.cs" />
     <Compile Include="Models\DateManagerModel.cs" />
@@ -329,20 +330,20 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904181742285_please.resx">
-      <DependentUpon>201904181742285_please.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905131537178_please medic.resx">
+      <DependentUpon>201905131537178_please medic.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904191550458_added pacient.resx">
-      <DependentUpon>201904191550458_added pacient.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905131541056_Added display name to data nasterii.resx">
+      <DependentUpon>201905131541056_Added display name to data nasterii.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904191734130_added medic.resx">
-      <DependentUpon>201904191734130_added medic.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905131629132_Detalii.resx">
+      <DependentUpon>201905131629132_Detalii.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904191742561_added medic1.resx">
-      <DependentUpon>201904191742561_added medic1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905131708547_added istoric.resx">
+      <DependentUpon>201905131708547_added istoric.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904191744022_added medicPlease.resx">
-      <DependentUpon>201904191744022_added medicPlease.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905131712207_added autoincrement.resx">
+      <DependentUpon>201905131712207_added autoincrement.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

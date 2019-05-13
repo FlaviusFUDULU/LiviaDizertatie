@@ -27,5 +27,8 @@ namespace AplicatieSalariati.Models
 
         [Display(Name = "Numar de telefon")]
         public string Numartelefon { get; set; }
+
+        [Display(Name = "Data nașterii")]
+        public DateTime DataNastertii { get; set; }
     }
 }

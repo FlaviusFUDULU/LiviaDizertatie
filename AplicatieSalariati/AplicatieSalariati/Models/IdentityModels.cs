@@ -34,7 +34,10 @@ namespace AplicatieSalariati.Models
         public DbSet<Pacient> Pacient { get; set; }
         public DbSet<Medic> Medic { get; set; }
 
-        public static ApplicationDbContext Create()
+        public DbSet<Istoric> Istoric { get; set; }
+    
+
+    public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
