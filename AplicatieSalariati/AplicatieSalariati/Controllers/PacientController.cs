@@ -61,7 +61,7 @@ namespace AplicatieSalariati.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public ActionResult Create([Bind(Include = "CNP,Nume,Prenume,Email,Functie,Adresa,TelefonPersonal,TelefonServici")] DateAdministratorModel dateAdministratorModel)
+        public ActionResult Create(DateAdministratorModel dateAdministratorModel)
         {
             if (ModelState.IsValid)
             {
@@ -97,7 +97,7 @@ namespace AplicatieSalariati.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CNP,Nume,Prenume,Email,Adresa,NumarTelefon,DataNasterii,Sex,ActIdentitate")] Pacient pacient)
+        public ActionResult Edit(Pacient pacient)
         {
             if (ModelState.IsValid)
             {
@@ -109,6 +109,108 @@ namespace AplicatieSalariati.Controllers
             return View(pacient);
         }
 
+        // GET: Salariat/Edit/5
+        public ActionResult Diagnostic(string id)
+        {
+            //if (id == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
+            //Istoric istoric = db.Istoric.Where(p => p.PacientCNP == id).FirstOrDefault();
+            //if (istoric == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            Istoric newIstoric = new Istoric()
+            {
+                //IstoricId = istoric.IstoricId,
+                PacientCNP = id,
+                Data = DateTime.Now
+            };
+
+            return View(newIstoric);
+        }
+
+        public ActionResult EditIstoric(int id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Istoric istoric = db.Istoric.Find(id);
+            if (istoric == null)
+            {
+                return HttpNotFound();
+            }
+            //Istoric newIstoric = new Istoric()
+            //{
+            //    //IstoricId = istoric.IstoricId,
+            //    PacientCNP = id,
+            //    Data = DateTime.Now
+            //};
+
+            return View(istoric);
+        }
+
+        // POST: Salariat/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Diagnostic(Istoric istoric)
+        {
+            if (ModelState.IsValid)
+            {
+                //dateAdministratorModel = CalculeazaTaxe(ref dateAdministratorModel);
+                db.Entry(istoric).State = EntityState.Added;
+                db.SaveChanges();
+                return RedirectToAction("Index", new { message = "Editat cu succes!" });
+            }
+            return View(istoric);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditIstoric(Istoric istoric)
+        {
+            if (ModelState.IsValid)
+            {
+                //dateAdministratorModel = CalculeazaTaxe(ref dateAdministratorModel);
+                db.Entry(istoric).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Details", "Pacient", new { id = istoric.PacientCNP });
+            }
+            return View(istoric);
+        }
+
+        public ActionResult Reteta(int id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            RetetaModel reteta = new RetetaModel()
+            {
+                IstoricId = id
+            };
+
+            return View(reteta);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Reteta(RetetaModel reteta)
+        {
+            if (ModelState.IsValid)
+            {
+                //dateAdministratorModel = CalculeazaTaxe(ref dateAdministratorModel);
+                db.Entry(reteta).State = EntityState.Added;
+                db.SaveChanges();
+                Istoric istoric = db.Istoric.Find(reteta.IstoricId);
+                return RedirectToAction("Details", "Pacient", new { id = istoric.PacientCNP });
+            }
+            return View(reteta);
+        }
         // GET: Salariat/Delete/5
         public ActionResult Delete(string id)
         {

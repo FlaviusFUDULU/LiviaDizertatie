@@ -63,6 +63,9 @@
                     <td class="text-right">
                         @if (ViewBag.Type == "Edit")
                         {
+                            <a type="button" href="@Url.Action("Diagnostic", "Pacient", new { id = item.CNP})" class="btn btn-info" aria-label="Left Align">
+                                <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+                            </a>
                             <a type="button" href="@Url.Action("Details", "Pacient", new { id = item.CNP})" class="btn btn-info" aria-label="Left Align">
                                 <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
                             </a>

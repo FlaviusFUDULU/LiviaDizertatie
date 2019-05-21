@@ -38,6 +38,16 @@ namespace AplicatieSalariati.Models
         [Display(Name = "Act de identitate")]
         public string ActIdentitate { get; set; }
 
+
+        [Display(Name = "Alergii/intolerante")]
+        public string AlergiiIntolerante { get; set; }
+
+        [Display(Name = "Boli Cronice")]
+        public string BoliCronice { get; set; }
+
+        [Display(Name = "Grupa de sange")]
+        public string GrupaSange { get; set; }
+
         [ForeignKey("PacientCNP")]
         public ICollection<Istoric> Istorics { get; set; }
 
